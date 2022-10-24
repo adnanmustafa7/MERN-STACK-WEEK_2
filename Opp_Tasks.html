@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2</title>
+</head>
+
+<body>
+
+    <script>
+        class Task_1 {
+
+            task() {
+                let arr = [100, 200, 300, 400];
+                for (let i = 1; i < arr.length; ++i) {
+                    if (arr[0] < arr[i])
+                        arr[0] = arr[i];
+                }
+                console.log("Task 1\nLargest num is:", arr[0]);
+            }
+
+        }
+
+        let task1 = new Task_1();
+        task1.task();
+
+
+        class Task_2 {
+
+            task_2() {
+                console.log("\nTask 2");
+                let array = [1, 2, 1, 1, 4, 5, 6, 7, 88];
+                let frequent = 1;
+                let n = 0;
+                let number;
+                for (let i = 0; i < array.length; i++) {
+                    for (let j = i; j < array.length; j++) {
+                        if (array[i] == array[j])
+                            n++;
+                        if (frequent < n) {
+                            frequent = n;
+                            number = array[i];
+                        }
+                    }
+                    n = 0;
+                }
+                console.log(number + " ( " + frequent + " times ) ");
+
+            }
+
+        }
+        let task2 = new Task_2();
+        task2.task_2();
+
+
+        class Task_3 {
+
+            task3() {
+                console.log("\nTask 3");
+
+                let array1 = [21, 6, 3, 15, 76, 5]
+                let count = 1;
+                for (let i = 0; i < array1.length; i++) {
+                    count = count * array1[i];
+                }
+                console.log("Product of Array:", count);
+
+            }
+        }
+        let task3 = new Task_3();
+        task3.task3();
+
+
+        console.log("\nTask 4")
+        
+        function Task_4(upercase_string) {
+            let array2 = upercase_string.split(' ');
+            let new_array2 = [];
+            for (let i = 0; i < array2.length; i++) {
+                new_array2.push(array2[i].charAt(0).toUpperCase() + array2[i].slice(1));
+            }
+            return new_array2.join(' ');
+        }
+        console.log(Task_4("my name is adnan"));
+
+
+        console.log("\nTask 5");
+
+        function vowel_find(alpha) {
+            let count = 0;
+            for (let i = 0; i < alpha.length; i++) {
+                if (alpha[i] == 'a' || alpha[i] == 'e' || alpha[i] == 'i' || alpha[i] == 'o' || alpha[i] == 'u' 
+                || alpha[i] == 'A' || alpha[i] == 'E' || alpha[i] == 'I' || alpha[i] == 'O' || alpha[i] == 'U')
+                    count++;
+            }
+            return count;
+
+        }
+        console.log(vowel_find("My Name is Adnan"));
+
+
+    </script>
+</body>
+
+</html>
